@@ -29,7 +29,12 @@ const authRoutes = require("./api/routes/authRoutes");
 const termekRoutes = require("./api/routes/termekRoutes")
 
 const kategoriaRoutes = require("./api/routes/kategoriaRoutes")
-const kosartetelekRoutes = require("./api/routes/kosartetelRoutes")
+
+const postPicRoutes = require("./api/routes/postPicRoutes")
+
+const kosartetelRoutes = require("./api/routes/kosartetelRoutes")
+
+const cartRoutes = require("./api/routes/cartRoutes");
 
 app.use("/api", api);
 
@@ -40,7 +45,12 @@ api.use("/auth", authRoutes);
 api.use("/termekek", termekRoutes);
 
 api.use("/kategoriak", kategoriaRoutes);
-api.use("/kosartetelek", kosartetelekRoutes);
+
+api.use("/picupload", postPicRoutes);
+
+api.use("/kosartetelek", kosartetelRoutes);
+
+api.use("/kosar", cartRoutes);
 
 api.use(errorHandler.notFound);
 
